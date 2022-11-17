@@ -5,12 +5,12 @@ import Card from './Card'
 
 // array of card images
 const cardImages = [
-  { "src": "/img/green2.png"},
-  { "src": "/img/blue4.png"},
-  { "src": "/img/redrev.png"},
-  { "src": "/img/wild.png"},
-  { "src": "/img/wilddraw4.png"},
-  { "src": "/img/yellowskip.png"},
+  { "src": "/images/green2.png"},
+  { "src": "/images/blue4.png"},
+  { "src": "/images/redrev.png"},
+  { "src": "/images/wild.png"},
+  { "src": "/images/wilddraw4.png"},
+  { "src": "/images/yellowskip.png"},
 ]
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <button>New Game</button>
+      <button onClick={shuffleCards}>New Game</button>
     </div>
   );
 }
