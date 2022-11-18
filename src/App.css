@@ -4,6 +4,14 @@
   margin: auto;
 }
 
+h5 {
+  margin-top: -10px;
+}
+
+p {
+  font-size: 20px;
+}
+
 button {
   background: none;
   border: 2px solid #fff;
