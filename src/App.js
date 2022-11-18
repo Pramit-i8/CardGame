@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import {useState } from 'react';
 import './App.css';
-import Card from './Card'
 
 // array of card images
 const cardImages = [
@@ -51,4 +50,3 @@ function App() {
 }
 
 export default App;
-Card.js
