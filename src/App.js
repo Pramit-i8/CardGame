@@ -5,8 +5,8 @@ import SingleCard from './components/SingleCard';
 // array of card images
 //  3 by 4 grid: 12 cards, 6 pairs
 const cardImages = [
-  { "src": "/images/green2.png", matched: false },
-  { "src": "/images/blue4.png", matched: false },
+  { "src": "/images/2.png", matched: false },
+  { "src": "/images/card-blue4.png", matched: false },
   { "src": "/images/redrev.png", matched: false },
   { "src": "/images/wild.png", matched: false },
   { "src": "/images/wilddraw4.png", matched: false },
