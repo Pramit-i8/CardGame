@@ -1,2 +1,2 @@
-# Memory Card Game using React App
+# Uno Memory Card Game using React App
 ![](demo.gif)
