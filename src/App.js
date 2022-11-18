@@ -1,16 +1,16 @@
 import logo from './logo.svg';
-import {useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/SingleCard';
 
 // array of card images
 const cardImages = [
-  { "src": "/images/green2.png"},
-  { "src": "/images/blue4.png"},
-  { "src": "/images/redrev.png"},
-  { "src": "/images/wild.png"},
-  { "src": "/images/wilddraw4.png"},
-  { "src": "/images/yellowskip.png"},
+  { "src": "/images/green2.png", matched: false },
+  { "src": "/images/blue4.png", matched: false },
+  { "src": "/images/redrev.png", matched: false },
+  { "src": "/images/wild.png", matched: false },
+  { "src": "/images/wilddraw4.png", matched: false },
+  { "src": "/images/yellowskip.png", matched: false },
 ]
 
 function App() {
@@ -34,7 +34,39 @@ function App() {
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)  
   }
+  // compare two selected cards
+  useEffect(() => {
+    if (choiceOne && choiceTwo){
+
+      if (choiceOne.src === choiceTwo.src) {
+        setCards(prevCards => {
+          return prevCards.map(card => {
+            if (card.src === choiceOne.src){
+              return {...card, matched: true}
+            }
+            else
+            {
+              return card
+            }
+          
+          })
+        })
+        resetTurn()
+      }
+      else
+      {
+        resetTurn()
+      }
+    }
+  },[choiceOne, choiceTwo])
   
+  // reset choices and increase number of turns
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurns => prevTurns + 1);
+  }
+
   return (
     <div className="App">
       <h1>Memory Game</h1>
