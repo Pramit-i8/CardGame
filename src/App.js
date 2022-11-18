@@ -5,12 +5,12 @@ import SingleCard from './components/SingleCard';
 
 // array of card images
 const cardImages = [
-  { "src": "/images/green2.png"},
-  { "src": "/images/blue4.png"},
-  { "src": "/images/redrev.png"},
-  { "src": "/images/wild.png"},
-  { "src": "/images/wilddraw4.png"},
-  { "src": "/images/yellowskip.png"},
+  { "src": "/images/green2.png", matched: false },
+  { "src": "/images/blue4.png", matched: false },
+  { "src": "/images/redrev.png", matched: false },
+  { "src": "/images/wild.png", matched: false },
+  { "src": "/images/wilddraw4.png", matched: false },
+  { "src": "/images/yellowskip.png", matched: false },
 ]
 
 function App() {
@@ -39,12 +39,22 @@ function App() {
     if (choiceOne && choiceTwo){
 
       if (choiceOne.src === choiceTwo.src) {
-        console.log('matching cards')
+        setCards(prevCards => {
+          return prevCards.map(card => {
+            if (card.src === choiceOne.src){
+              return {...card, matched: true}
+            }
+            else
+            {
+              return card
+            }
+          
+          })
+        })
         resetTurn()
       }
       else
       {
-        console.log('different cards')
         resetTurn()
       }
     }
