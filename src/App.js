@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/SingleCard';
@@ -48,6 +47,7 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
+      
       if (choiceOne.src === choiceTwo.src) {
         setCards(prevCards => {
           return prevCards.map((card) => {
@@ -59,7 +59,9 @@ function App() {
           })
         })
         resetTurn();
-      } else {
+      } 
+      else 
+      {
         setTimeout(() => resetTurn(), 1000);
       }
     }
